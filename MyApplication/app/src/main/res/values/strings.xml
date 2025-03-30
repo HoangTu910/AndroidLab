@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title_main">THÔNG TIN SINH VIÊN</string>
+    <string name="title_second">Cô giáo dạy chính tả</string>
+    <string name="main_title">THÔNG TIN SINH VIÊN</string>
+    <string name="main_title2">THÔNG TIN THU THẬP</string>
+    <string name="edit_name">Họ và tên</string>
+    <string name="edit_mssv">MSSV</string>
+    <string name="edit_class">Lớp</string>
+    <string name="edit_phone">SĐT</string>
+    <string name="view_year">SINH VIÊN NĂM</string>
+    <string name="view_major">CHUYÊN NGÀNH</string>
+    <string name="major_HTN">MT - HTN</string>
+    <string name="major_network">Viễn thông</string>
+    <string name="major_electronics">Điện tử</string>
+    <string name="view_title2">KẾ HOẠCH PHÁT TRIỂN BẢN THÂN</string>
+    <string name="view_nam1">Năm 1</string>
+    <string name="view_nam2">Năm 2</string>
+    <string name="view_nam3">Năm 3</string>
+    <string name="view_nam4">Năm 4</string>
+    <string name="btn_send">Gửi thông tin</string>
+    <string name="btn_back">BACK</string>
+
+    <string name="display_name">Họ và tên: %s</string>
+    <string name="display_mssv">MSSV: %s</string>
+    <string name="display_class">Lớp: %s</string>
+    <string name="display_phone">SĐT: %s</string>
+    <string name="display_year">Năm học: %s</string>
+    <string name="display_majors">Ngành học: %s</string>
+    <string name="display_essay">Kế hoạch phát triển: %s</string>
+</resources>
