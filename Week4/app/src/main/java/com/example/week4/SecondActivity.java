@@ -3,15 +3,19 @@ package com.example.week4;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
 
     private TextView textViewInfo;
     private Button buttonBack;
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +25,7 @@ public class SecondActivity extends AppCompatActivity {
         // Initialize views
         textViewInfo = findViewById(R.id.textViewInfo);
         buttonBack = findViewById(R.id.buttonBack);
+        imageView = findViewById(R.id.imageView);
 
         // Retrieve the submitted information from MainActivity
         Intent intent = getIntent();
@@ -31,6 +36,12 @@ public class SecondActivity extends AppCompatActivity {
         String plan = intent.getStringExtra("key_for_plan");
         String year = intent.getStringExtra("key_for_year");
         String major = intent.getStringExtra("key_for_major");
+
+        byte[] byteArray = intent.getByteArrayExtra("key_for_image");
+        if (byteArray != null) {
+            Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+            imageView.setImageBitmap(bitmap);
+        }
 
         // Check if all information is present
         if (name != null && mssv != null && className != null && phone != null && plan != null && year != null && major != null) {

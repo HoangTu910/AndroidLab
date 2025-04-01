@@ -13,8 +13,11 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import java.io.ByteArrayOutputStream;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_PERMISSION = 100;
 
     private EditText editTextName, editTextMSSV, editTextClass, editTextPhone, editTextPlan;
+    private ImageView imageView;
     private RadioGroup radioGroupYear, radioGroupMajor;
     private Button buttonSendSMS, buttonCall, buttonCamera, buttonSubmit;
 
@@ -42,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         buttonCall = findViewById(R.id.btnCall);
         buttonCamera = findViewById(R.id.btnCamera);
         buttonSubmit = findViewById(R.id.btnSubmit);
+        imageView = findViewById(R.id.imageView);
 
         // Set OnClickListener for submit button
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +66,18 @@ public class MainActivity extends AppCompatActivity {
 
                 if (!name.isEmpty() && !mssv.isEmpty() && !className.isEmpty() && !phone.isEmpty() && !plan.isEmpty() && !year.isEmpty() && !major.isEmpty()) {
                     Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                    
+                    //chuyen thanh byte
+                    imageView.setDrawingCacheEnabled(true);
+                    imageView.buildDrawingCache();
+                    Bitmap bitmap = imageView.getDrawingCache();
+                    if (bitmap != null) {
+                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                        byte[] byteArray = stream.toByteArray();
+                        intent.putExtra("key_for_image", byteArray);
+                    }
+                    
                     intent.putExtra("key_for_submitted_info", name);
                     intent.putExtra("key_for_mssv", mssv);
                     intent.putExtra("key_for_class", className);
@@ -109,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                     requestPermissions(new String[]{Manifest.permission.CAMERA}, REQUEST_PERMISSION);
+                    
                 } else {
                     Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
@@ -140,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
+            imageView.setImageBitmap(imageBitmap);
         }
     }
 
