@@ -101,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        // Here you would typically implement actual password reset logic
         Toast.makeText(this, "Password reset successful", Toast.LENGTH_SHORT).show();
         toggleForgotPasswordMode(); // Return to login mode
     }
