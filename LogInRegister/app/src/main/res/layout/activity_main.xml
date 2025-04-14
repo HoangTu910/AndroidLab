@@ -58,17 +58,35 @@
             android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/loginButton"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:layout_marginBottom="8dp"/>
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/loginButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:layout_marginEnd="4dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/registerButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:layout_marginStart="4dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+    </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/registerButton"
-        android:layout_width="match_parent"
+        android:id="@+id/forgotPasswordButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+        android:text="Forgot Password?"
+        android:layout_marginTop="8dp"
+        style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
 </LinearLayout>
