@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#F5F5F5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="120dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_theme" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="QUIZ APP"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:textColor="#EF1200"
+        android:layout_height="wrap_content">
+    </TextView>
+
+    <Button
+        android:id="@+id/btnTakeQuiz"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#EF1200"
+        android:text="TAKE QUIZ"
+        android:textColor="@android:color/white"
+        android:textSize="20dp">
+    </Button>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        android:weightSum="2">
+
+        <!-- Login with Facebook Button -->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:backgroundTint="#4267B2"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="Login"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:drawableEnd="@drawable/ic_facebook"
+            android:drawablePadding="8dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:backgroundTint="@android:color/white"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="Login"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:drawableEnd="@drawable/ic_google"
+            android:drawablePadding="8dp"/>
+    </LinearLayout>
+
+</LinearLayout>
